@@ -1,0 +1,79 @@
+﻿#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+string COW_Create(string word)
+{
+
+    string say = word;
+    string return_COW;
+    if(say == "")
+    {
+        say = "MOO";
+    }
+    int word_size = say.length();
+    int range = 0;
+    return_COW.push_back(' ');
+   for(int i = 0; i < word_size + (word_size / 2); ++i)
+   {
+       return_COW.push_back('=');
+   }
+   return_COW.push_back('\n');
+   return_COW += "||";
+for(int i = 0; i < word_size /5 ; i++)
+{
+    return_COW.push_back(' ');
+}
+return_COW += say;
+for(int i = 0; i < word_size /5 ; i++)
+{
+    return_COW.push_back(' ');
+}
+return_COW += "||";
+return_COW.push_back('\n');
+return_COW.push_back(' ');
+
+for(int i = 0; i < word_size + (word_size / 2); ++i)
+{
+    return_COW.push_back('=');
+    range++;
+}
+return_COW.push_back('\n');
+for(int i = 0; i < range; i++)
+{
+    return_COW.push_back(' ');
+}
+return_COW += "\\\\  ^__^\n";
+for(int i = 0; i < range+1; i++)
+{
+    return_COW.push_back(' ');
+}
+return_COW += "\\\\ (oo)\\_______\n";
+for(int i = 0; i < range; i++)
+{
+    return_COW.push_back(' ');
+}
+return_COW += "    (__)\\       }/\\/\n";
+
+for(int i = 0; i < range; i++)
+{
+    return_COW.push_back(' ');
+}
+return_COW += "        ||----W||\n";
+
+for(int i = 0; i < range; i++)
+{
+    return_COW.push_back(' ');
+}
+return_COW += "        ||     ||";
+
+return return_COW;
+}
+
+int main(int argc, char *argv[])
+{
+
+    cout << COW_Create("MOOOOO");
+    return 0;
+}
